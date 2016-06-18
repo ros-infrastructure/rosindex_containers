@@ -1,0 +1,3 @@
+[submodule "rosindex"]
+	path = rosindex
+	url = git@github.com:rosindex/rosindex.git
