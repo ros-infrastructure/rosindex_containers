@@ -4,6 +4,8 @@ RUN apt-get update -y && apt-get install -y sudo curl git-all git-svn mercurial 
 
 RUN gem install 'jekyll' 'colorator' 'rake' 'typhoeus' 'mercurial-ruby' 'pandoc-ruby' 'redcarpet' 'nokogiri' 'liquid' 'github-markup' 'awesome_print' 'pygments.rb' 'rugged' 
 
+RUN ln -s `which nodejs` /usr/bin/node
+
 #RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 #RUN curl -L https://get.rvm.io | bash -s stable
 
