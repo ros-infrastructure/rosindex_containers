@@ -1,29 +1,8 @@
 from ubuntu:xenial
 
-RUN apt-get update -y && apt-get install -y sudo curl git-all git-svn mercurial nodejs pandoc ruby rubygems-integration rake-compiler bundler cmake 
-RUN apt-get install -y build-essential pkg-config
-RUN apt-get install -y libgit2-dev libssh2-1 libssh2-1-dev
+RUN apt-get update -y && apt-get install -y sudo curl git-all git-svn mercurial nodejs pandoc ruby rubygems-integration rake-compiler bundler cmake build-essential pkg-config libgit2-dev libssh2-1 libssh2-1-dev libz-dev libssl-dev openssl libssh-dev libsslcommon2-dev libpthread-stubs0-dev
 
-RUN gem install 'jekyll'
-RUN gem install 'colorator'
-RUN gem install 'rake'
-#RUN gem install 'git'
-
-RUN gem install 'typhoeus'
-RUN gem install 'mercurial-ruby'
-RUN gem install 'pandoc-ruby'
-RUN gem install 'redcarpet'
-
-RUN apt-get install -y libz-dev
-RUN gem install 'nokogiri'
-RUN gem install 'liquid'
-RUN gem install 'github-markup'
-RUN gem install 'awesome_print'
-RUN gem install 'pygments.rb'
-
-RUN apt-get install -y libssl-dev openssl libssh-dev libsslcommon2-dev 
-RUN apt-get install -y libpthread-stubs0-dev
-RUN gem install 'rugged' 
+RUN gem install 'jekyll' 'colorator' 'rake' 'typhoeus' 'mercurial-ruby' 'pandoc-ruby' 'redcarpet' 'nokogiri' 'liquid' 'github-markup' 'awesome_print' 'pygments.rb' 'rugged' 
 
 #RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 #RUN curl -L https://get.rvm.io | bash -s stable
@@ -40,13 +19,8 @@ RUN gem install 'rugged'
 #RUN apt-get update
 #RUN apt-get install nodejs
 
-RUN apt-get install -y iputils-ping
-
-# Create checkout path
-RUN mkdir /mnt/checkout
-
 # Create builder user
-RUN adduser --disabled-password -gecos '' indie
+#RUN adduser --disabled-password -gecos '' indie
 RUN adduser indie sudo
 USER indie
 
