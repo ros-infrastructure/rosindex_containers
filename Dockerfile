@@ -19,17 +19,12 @@ RUN gem install 'jekyll' 'colorator' 'rake' 'typhoeus' 'mercurial-ruby' 'pandoc-
 #RUN apt-get update
 #RUN apt-get install nodejs
 
-# Create builder user
-#RUN adduser --disabled-password -gecos '' indie
-RUN adduser indie sudo
-USER indie
+VOLUME /checkout
+VOLUME /rosindex
 
-VOLUME /home/indie/checkout
-VOLUME /home/indie/rosindex
+RUN mkdir /root/.ssh
+RUN touch /root/.ssh/known_hosts
+RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
+RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 
-WORKDIR /home/indie/rosindex
-
-RUN mkdir /home/indie/.ssh
-RUN touch /home/indie/.ssh/known_hosts
-RUN ssh-keyscan github.com >> /home/indie/.ssh/known_hosts
-RUN ssh-keyscan bitbucket.org >> /home/indie/.ssh/known_hosts
+WORKDIR /rosindex
