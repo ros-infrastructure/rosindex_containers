@@ -2,9 +2,10 @@ from ubuntu:xenial
 
 RUN apt-get update -y && apt-get install -y sudo curl git-all git-svn mercurial nodejs pandoc ruby rubygems-integration rake-compiler bundler cmake build-essential pkg-config libgit2-dev libssh2-1 libssh2-1-dev libz-dev libssl-dev openssl libssh-dev libsslcommon2-dev libpthread-stubs0-dev
 
-RUN gem install 'jekyll' 'colorator' 'rake' 'typhoeus' 'mercurial-ruby' 'pandoc-ruby' 'redcarpet' 'nokogiri' 'liquid' 'github-markup' 'awesome_print' 'pygments.rb' 'rugged' 
+RUN gem install 'jekyll' 'colorator' 'rake' 'typhoeus' 'mercurial-ruby' 'pandoc-ruby' 'redcarpet' 'nokogiri' 'liquid' 'github-markup' 'awesome_print' 'pygments.rb' 'rugged'
+RUN gem install 'jekyll-sitemap'
 
-RUN ln -s `which nodejs` /usr/bin/node
+RUN ln -s `which nodejs` /usr/local/bin/node
 
 #RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 #RUN curl -L https://get.rvm.io | bash -s stable
