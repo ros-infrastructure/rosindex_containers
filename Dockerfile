@@ -22,12 +22,11 @@ RUN ln -s `which nodejs` /usr/local/bin/node
 #RUN apt-get update
 #RUN apt-get install nodejs
 
-VOLUME /checkout
-VOLUME /rosindex
+VOLUME /workdir
 
 RUN mkdir /root/.ssh
 RUN touch /root/.ssh/known_hosts
 RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 
-WORKDIR /rosindex
+WORKDIR /workdir/rosindex
