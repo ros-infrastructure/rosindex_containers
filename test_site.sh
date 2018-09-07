@@ -1,2 +1,1 @@
-./run.sh make build
-./run.sh make serve
+./run.sh make build serve-devel

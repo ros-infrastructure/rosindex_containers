@@ -1,7 +1,10 @@
 #!/usr/bin/env sh
 
+# Ensure your SSH private key has been added to the ssh-agent as follows:
+# ssh-add /home/$USER/.ssh/id_rsa
+
 # Example Usage:
-# ./run.sh rake serve:devel
+# ./run.sh make build
 
 docker run\
   --env SSH_AUTH_SOCK=/ssh-agent\
