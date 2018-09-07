@@ -1,2 +1,2 @@
-./run.sh rake build:deploy
-./run.sh rake serve:deploy
+./run.sh make build
+./run.sh make serve
