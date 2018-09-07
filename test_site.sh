@@ -1,0 +1,1 @@
+./run.sh make build serve-devel
