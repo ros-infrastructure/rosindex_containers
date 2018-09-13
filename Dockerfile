@@ -6,7 +6,7 @@ RUN apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-key 0xB01FA116
 RUN apt-get update -y && apt-get install -y sudo apt-utils curl git-all git-svn mercurial nodejs pandoc ruby rubygems-integration rake-compiler bundler cmake build-essential pkg-config libgit2-dev libssh2-1 libssh2-1-dev libz-dev libssl-dev openssl libssh-dev libsslcommon2-dev libpthread-stubs0-dev python3-vcstool
 
 RUN gem install 'jekyll' 'colorator' 'rake' 'typhoeus' 'mercurial-ruby' 'pandoc-ruby' 'redcarpet' 'nokogiri' 'liquid' 'github-markup' 'awesome_print' 'pygments.rb' 'rugged'
-RUN gem install 'jekyll-sitemap'
+RUN gem install 'jekyll-sitemap' 'jekyll-optional-front-matter' 'jekyll-titles-from-headings' 'jekyll-readme-index' 'jekyll-relative-links'
 
 RUN ln -s `which nodejs` /usr/local/bin/node
 
